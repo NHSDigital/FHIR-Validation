@@ -36,7 +36,7 @@ class FHIRMessage(
         val messageDefinitionProfile = messageHeader.definition
         val messageDefinition = findMessageDefinition(messageType, messageDefinitionProfile)
             ?: return createOperationOutcome(
-                "Unsupported message type ${messageType.system}#${messageType.code}.",
+                "Unsupported message type: Could not find a MessageDefinition.eventCoding with ${messageType.system}#${messageType.code}.",
                 "MessageHeader.eventCoding"
             )
 
